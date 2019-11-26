@@ -1,25 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import { Grid } from 'semantic-ui-react';
+import Sidebar from './components/Sidebar';
+import MessageList from './components/MessageList';
+import AddMessage from './components/AddMessage';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Grid stretched style={{minHeight: 'inherit', padding: '20px'}}>
+      <Grid.Row>
+        <Grid.Column width={3}>
+          <Sidebar />
+        </Grid.Column>
+        <Grid.Column width={13} stretched>  
+          <MessageList />
+          <AddMessage />
+        </Grid.Column>
+      </Grid.Row>
+    </Grid>
   );
 }
 
